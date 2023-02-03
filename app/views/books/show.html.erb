@@ -1,0 +1,11 @@
+<p class="desc-wp flash-color">
+    <%= flash[:notice] %>
+</p>
+<p class="desc-wp">
+    <strong>Title: </strong><%= @book.title %>
+</p>
+<p class="desc-wp">
+    <strong>Body: </strong><%= @book.body %>
+</p>
+<%= link_to "Edit", edit_book_path(@book.id), {class: "nav-link"} %>
+<%= link_to "Back", "/books", {class: "nav-link"} %>
