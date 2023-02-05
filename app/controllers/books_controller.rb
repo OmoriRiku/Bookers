@@ -1,7 +1,4 @@
 class BooksController < ApplicationController
-  def new
-  end
-
   # booksページ
   def index
     @book = Book.new
@@ -42,6 +39,7 @@ class BooksController < ApplicationController
     end
   end
   
+  # 削除機能
   def destroy
     book = Book.find(params[:id])
     book.destroy
