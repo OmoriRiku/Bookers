@@ -1,0 +1,17 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>本文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @result.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

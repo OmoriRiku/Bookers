@@ -1,5 +1,10 @@
 <h1 class="heading-wp">Books</h1>
 
+<%= form_with url:book_search_path, local: true, method: :get do |f| %>
+  <%= f.text_field :word %>
+  <%= f.submit '検索する' %>
+<% end %>
+
 <table class="index-table-wp">
   <thead>
     <th class="index-table-title">Title</th>
@@ -9,7 +14,7 @@
   <% @books.each do |book| %>
   <tbody>
     <tr>
-      <td class="index-table-td"><%= book.title %></td>
+      <td class="index-table-td"><%= link_to book.title, book_search_path(word: book.title) %></td>
       <td class="index-table-td"><%= book.body %></td>
       <td><%= link_to "Show", book_path(book.id), {class: "nav-link"} %></td>
       <td><%= link_to "Edit", edit_book_path(book.id), {class: "nav-link"} %></td>

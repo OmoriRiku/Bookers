@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   # booksページ
   def index
+
     @book = Book.new
     @books = Book.all
   end
